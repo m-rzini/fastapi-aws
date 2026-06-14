@@ -14,6 +14,9 @@ if os.getenv("DEPLOYMENT_ENVIRONMENT") == 'DEV':
 else:
     engine = create_engine(os.getenv("DB_URL"))
 
+# engine = create_engine("postgresql://rootuser:test1234!@fastapi-awi-database.cxa0g4m84dup.eu-west-3.rds.amazonaws.com:5432/postgres")
+
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 class User(Base):
